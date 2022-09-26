@@ -3,7 +3,7 @@ export const API_URL = 'https://countries.trevorblades.com/'
 type Maybe<T> = T | undefined | null
 
 export type Country = {
-  name: String
+  name: string
   currency: Maybe<string>
-  emoji: String
+  emoji: string
 }

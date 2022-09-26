@@ -3,7 +3,7 @@ import { API_URL } from '../constants'
 
 const countriesAPI = graphql.link(API_URL)
 
-const countries = [
+export const countries = [
   {
     name: 'Andorra',
     currency: 'EUR',
@@ -57,5 +57,7 @@ const countries = [
 ]
 
 export const handlers = [
-  countriesAPI.query('countries', (_req, res, ctx) => res(ctx.data(countries))),
+  countriesAPI.query('countries', (_req, res, ctx) =>
+    res(ctx.data({ countries }))
+  ),
 ]
