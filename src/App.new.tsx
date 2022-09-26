@@ -1,19 +1,8 @@
-import { gql, useQuery } from '@apollo/client'
 import './App.css'
-import { Country } from './constants'
-
-let COUNTRIES = gql`
-  query countries {
-    countries {
-      name
-      currency
-      emoji
-    }
-  }
-`
+import { useCountriesQuery } from './generated'
 
 function App() {
-  let { data } = useQuery<{ countries: Country[] }>(COUNTRIES)
+  let { data } = useCountriesQuery()
 
   return (
     <div className="App">

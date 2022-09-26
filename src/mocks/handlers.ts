@@ -1,6 +1,7 @@
 import { graphql } from 'msw'
+import { API_URL } from '../constants'
 
-const countriesAPI = graphql.link('https://countries.trevorblades.com/')
+const countriesAPI = graphql.link(API_URL)
 
 const countries = [
   {
@@ -56,5 +57,5 @@ const countries = [
 ]
 
 export const handlers = [
-  countriesAPI.query('countries', (req, res, ctx) => res(ctx.data(countries))),
+  countriesAPI.query('countries', (_req, res, ctx) => res(ctx.data(countries))),
 ]

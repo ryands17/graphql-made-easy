@@ -8,13 +8,21 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
+    "generate:schema": "graphql-codegen --config codegen.yml",
+    "generate:schema:watch": "graphql-codegen --config codegen.yml --watch",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "cross-fetch": "^3.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.12.1",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "3.3.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",

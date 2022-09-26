@@ -1,9 +1,13 @@
+import { ApolloProvider } from '@apollo/client'
 import { render } from '@testing-library/react'
+import { client } from './apollo'
 
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
     // wrap provider(s) here if needed
-    wrapper: ({ children }) => children,
+    wrapper: ({ children }) => (
+      <ApolloProvider client={client}>{children}</ApolloProvider>
+    ),
     ...options,
   })
 
