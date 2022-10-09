@@ -10,6 +10,7 @@
     "coverage": "vitest run --coverage",
     "generate:schema": "graphql-codegen --config codegen.yml",
     "generate:schema:watch": "graphql-codegen --config codegen.yml --watch",
+    "slides": "serve -s slides",
     "preview": "vite preview"
   },
   "dependencies": {

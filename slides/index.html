@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Serverless</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- talk slide -->
+        <section>
+          <h1>Fully typed GraphQL API's with TypeScript and Codegen</h1>
+        </section>
+
+        <!-- intro -->
+        <section>
+          <h2>Hello everyone 👋</h2>
+          <div>
+            I'm Ryan<br />
+            Senior Software Engineer @ Shell Recharge Solutions
+          </div>
+        </section>
+
+        <!-- topics to be covered -->
+        <section>
+          <h2>Topics that we will be covering today</h2>
+          <ul>
+            <li class="fragment fade-up">Quick introduction to GraphQL</li>
+            <li class="fragment fade-up">
+              What are the pitfalls and errors we could face without types
+            </li>
+            <li class="fragment fade-up">
+              How we can use TypeScript to make our code safer and fun to work
+              with
+            </li>
+            <li class="fragment fade-up">
+              How we can leverage the above type safety without writing the
+              types by hand 🎉
+            </li>
+          </ul>
+        </section>
+
+        <!-- Intro to GraphQL -->
+        <section>
+          <section>
+            <h2>
+              Let's start with
+              <a rel="noreferrer" target="_blank" href="https://graphql.org/"
+                >GraphQL</a
+              >
+              🚀
+            </h2>
+          </section>
+
+          <section>
+            <h3>All data fetched from a single endpoint</h3>
+            <img src="./assets/graphql-1.png" />
+          </section>
+
+          <section>
+            <h3>Strongly Typed</h3>
+            <img src="./assets/graphql-2.png" />
+          </section>
+
+          <section>
+            <h3>Always a predictable response</h3>
+            <img src="./assets/graphql-3.png" />
+          </section>
+
+          <section>
+            <h3>Great initial documentation 📘</h3>
+            <img src="./assets/graphql-4.png" />
+          </section>
+        </section>
+
+        <!-- Introduction to the app -->
+        <section>
+          <h2>Our example app</h2>
+          <li class="fragment fade-up">A simple React app created with Vite</li>
+          <li class="fragment fade-up">
+            Backend GraphQL API:
+            <a
+              href="https://countries.trevorblades.com/"
+              rel="noreferrer"
+              target="_blank"
+              >Countries</a
+            >
+          </li>
+          <li class="fragment fade-up">
+            Interacting with the API using Apollo Client
+          </li>
+          <li class="fragment fade-up">
+            Writing a simple query to fetch countries
+          </li>
+        </section>
+
+        <!-- Completed the example with writing types by hand -->
+        <section>
+          <h2>Quite tedious isn't it 😫</h2>
+          <li class="fragment fade-up">Is there a better way??? 🤔</li>
+        </section>
+
+        <!-- GraphQL Codegen -->
+        <section>
+          <h2>
+            Enter
+            <a
+              href="https://www.the-guild.dev/graphql/codegen"
+              rel="noreferrer"
+              target="_blank"
+              >GraphQL Codegen</a
+            >
+          </h2>
+          <li class="fragment fade-up">
+            A type generator for your GraphQL API
+          </li>
+          <li class="fragment fade-up">
+            Loads of plugins for any library you use
+          </li>
+          <li class="fragment fade-up">
+            For both the frontend and the backend
+          </li>
+          <li class="fragment fade-up">Let's refactor 😃</li>
+        </section>
+
+        <!-- Post refactoring -->
+        <section>
+          <h2>How good was that 😲</h2>
+          <li class="fragment fade-up">
+            The safety of TypeScript that automatically updates with the GraphQL
+            schema is an amazing developer experience
+          </li>
+        </section>
+
+        <!-- the end -->
+        <section>
+          <h2>Thank you :)</h2>
+          <img src="./assets/repository.png" height="200" width="200" />
+          <h3>Reach me @</h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ryan-dsouza-880522125/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/ryands1701"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://dev.to/ryands17"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Dev.to</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <!-- <script src="plugin/markdown/markdown.js"></script> -->
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealHighlight, RevealNotes],
+      })
+    </script>
+  </body>
+</html>
