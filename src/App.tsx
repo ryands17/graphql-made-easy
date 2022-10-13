@@ -1,19 +1,20 @@
-import { gql, useQuery } from '@apollo/client'
+import { gql } from '@apollo/client'
 import './App.css'
-import { Country } from './constants'
+import { useCountriesQuery } from './generated'
 
-let COUNTRIES = gql`
-  query countries {
-    countries {
+export const COUNTRIES = gql`
+  query countries($orderBy: String) {
+    countries(orderBy: $orderBy) {
       name
       currency
       emoji
+      capital
     }
   }
 `
 
 function App() {
-  let { data, loading } = useQuery<{ countries: Country[] }>(COUNTRIES)
+  let { data, loading } = useCountriesQuery()
 
   return (
     <div className="App">
@@ -31,7 +32,8 @@ function App() {
                   margin: '0.8rem',
                 }}
               >
-                {country.emoji} {country.name} | 💰 {country.currency}
+                {country.emoji} {country.name} | 💰 {country.currency}{' '}
+                {country.capital}
               </li>
             ))}
           </ul>

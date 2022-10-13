@@ -1,15 +1,12 @@
 overwrite: true
 schema: https://countries.trevorblades.com/
-documents: './src/**/*.graphql'
+documents: './src/**/*.tsx'
 generates:
   ./src/generated.ts:
     plugins:
       - typescript
       - typescript-operations
       - typescript-react-apollo
-    # config:
-    #   defaultBaseOptions:
-    #     pollingInterval: 0
 hooks:
   afterAllFileWrite:
     - prettier --write
